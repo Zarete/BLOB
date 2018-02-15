@@ -1,0 +1,682 @@
+=head2 Mon Jan 29 22:08:49 2018: C<Module> L<File::ReadBackwards|File::ReadBackwards>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:08:50 2018: C<Module> L<Bio::GFF3|Bio::GFF3>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.0>
+
+=item *
+
+C<EXE_FILES: bin/gff3_from_fasta>
+
+=back
+
+=head2 Mon Jan 29 22:09:00 2018: C<Module> L<Data|Data>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: scripts/stag-autoschema.pl scripts/stag-db.pl scripts/stag-diff.pl scripts/stag-drawtree.pl scripts/stag-filter.pl scripts/stag-findsubtree.pl scripts/stag-flatten.pl scripts/stag-grep.pl scripts/stag-handle.pl scripts/stag-itext2simple.pl scripts/stag-itext2sxpr.pl scripts/stag-itext2xml.pl scripts/stag-join.pl scripts/stag-merge.pl scripts/stag-mogrify.pl scripts/stag-parse.pl scripts/stag-query.pl scripts/stag-splitter.pl scripts/stag-view.pl scripts/stag-xml2itext.pl scripts/stag-itext2simple.pl>
+
+=back
+
+=head2 Mon Jan 29 22:09:03 2018: C<Module> L<Class::Data::Inheritable|Class::Data::Inheritable>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:05 2018: C<Module> L<Devel::StackTrace|Devel::StackTrace>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:05 2018: C<Module> L<Exception::Class|Exception::Class>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.44>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:07 2018: C<Module> L<Capture::Tiny|Capture::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.46>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:09 2018: C<Module> L<Text::Diff|Text::Diff>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.45>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:12 2018: C<Module> L<Test::Simple|Test::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.302120>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:14 2018: C<Module> L<Test::Deep|Test::Deep>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.127>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:16 2018: C<Module> L<Sub::Uplevel|Sub::Uplevel>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.2800>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:17 2018: C<Module> L<Test::Warn|Test::Warn>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.32>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:18 2018: C<Module> L<Test::Exception|Test::Exception>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.43>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:19 2018: C<Module> L<Test::Most|Test::Most>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.35>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:34 2018: C<Module> L<Digest::Crc32|Digest::Crc32>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:36 2018: C<Module> L<Clone::Choose|Clone::Choose>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:09:37 2018: C<Module> L<Hash::Merge|Hash::Merge>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.299>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:42 2018: C<Module> L<DBD::SQLite|DBD::SQLite>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.54>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:44 2018: C<Module> L<Devel::Size|Devel::Size>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.81>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:45 2018: C<Module> L<File::Next|File::Next>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.16>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:47 2018: C<Module> L<JSON|JSON>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.97001>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:49 2018: C<Module> L<Heap::Simple|Heap::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:53 2018: C<Module> L<Heap::Simple::XS|Heap::Simple::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:55 2018: C<Module> L<local::lib|local::lib>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.000024>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:10:59 2018: C<Module> L<libxml-perl|libxml-perl>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:00 2018: C<Module> L<XML::RegExp|XML::RegExp>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:01 2018: C<Module> L<XML::DOM|XML::DOM>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.46>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:02 2018: C<Module> L<XML::DOM::XPath|XML::DOM::XPath>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:04 2018: C<Module> L<File::Slurp::Tiny|File::Slurp::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.004>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:05 2018: C<Module> L<Tree::DAG_Node|Tree::DAG_Node>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.30>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jan 29 22:11:06 2018: C<Module> L<Bio::FeatureIO|Bio::FeatureIO>
+
+=over 4
+
+=item *
+
+C<installed into: /home/kourmanalieva/Bureau/JBrowse-1.12.3/extlib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.6.905>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

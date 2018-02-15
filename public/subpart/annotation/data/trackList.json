@@ -1,0 +1,27 @@
+{
+   "formatVersion" : 1,
+   "tracks" : [
+      {
+         "category" : "Reference sequence",
+         "chunkSize" : 20000,
+         "key" : "Reference sequence",
+         "label" : "DNA",
+         "seqType" : "dna",
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "type" : "SequenceTrack",
+         "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-"
+      },
+      {
+         "compress" : 0,
+         "key" : "annotation",
+         "label" : "annotation",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : null,
+         "type" : "FeatureTrack",
+         "urlTemplate" : "tracks/annotation/{refseq}/trackData.json"
+      }
+   ]
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE>
+<html>
+  <head lang="en">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <title>MetaBLOB</title>
+    <meta name="author" content="Amelie Laporte">
+
+ <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch"></script>
+    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cose-bilkent/1.6.5/cytoscape-cose-bilkent.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/prettyPhoto.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../../js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <!-- Stylesheets for Viewer -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- Script for Viewer -->
+    <script src="js/cytoscape.min.js"></script>
+    <script src="js/reload.js"></script>
+  </head>
+    <!-- Shared for Blob website -->
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="preloader">
+      <div id="status"> <img src="../../img/preloader.gif" height="64" width="64" alt=""> </div>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+          <a class="navbar-brand page-scroll" href="#page-top"><i class="fas fa-paper-plane"></i> Metabolomic</a> </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden"> <a href="#page-top"></a> </li>
+            <li> <a class="page-scroll" href="../../index.html">Home</a> </li>
+            <li> <a class="page-scroll" href="../life_cycle/life_cycle.html">Life Cycle</a> </li>
+            <li> <a class="page-scroll" href="../annotation/annotation.html">Genomic</a> </li>
+            <li> <a class="page-scroll" href="../proteins/proteins.html">Proteomic</a> </li>
+            <li> <a class="page-scroll" href="../movement/movement.html">Movement</a> </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!--Cytoscapejs viewer window -->
+    <div id="cy"></div>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>
+          <img id="png">
+        </p>
+      </div>
+    </div>
+
+
+        <!-- Form modal -->
+          <div id="formModal" class="modal">
+              <!-- Modal content -->
+              <div class="form-modal-content">
+                <span class="close">&times;</span>
+                <form id="form" method="post" action="#">
+                  <p>
+                      <label for="reaction">Complete reaction name</label> : <input type="text" id="reaction" name="Reaction" placeholder="Ex: glutathione:NADP+ oxidoreductase"/><br/>
+                      <label for="product">Products</label> : <input type="text" id="product" name="Products" placeholder="Ex: glutathione; glutathione, NADP+"/><br/>
+                      <label for="reactant">Reactants</label> : <input type="text" id="reactant" name="Reactants" placeholder="Ex: glutathione disulfide; NADPH; H+"/><br/>
+                      <input type="submit" value="Submit" />
+                  </p>
+                </form>
+              </div>
+            </div>
+
+         <!-- Options modal -->
+         <div id="Modal" class="modal">
+          <!-- Modal content -->
+       <div class="control-modal-content">
+          <span class="close">&times;</span>
+              Metabolic pathways <br/>
+            <label class="control control-checkbox">
+              Glycolysis
+                <input class="control-path" id="glycolyse" type="checkbox" onchange="glycolyse();" />
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Krebs cycle
+                <input class="control-path" id="krebs" type="checkbox" onchange="krebs();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Hexose catabolism
+                <input class="control-path" id="hexose" type="checkbox" onchange="hexose();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Pentose phosphate pathway
+                <input class="control-path" id="pentose" type="checkbox" onchange="pentose();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Neoglucogenesis
+                <input class="control-path" id="neoglu" type="checkbox" onchange="neoglu();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Oxidative decarboxylation of pyruvate
+                <input class="control-path" id="oxipyr" type="checkbox" onchange="oxipyr();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Anapleurotic synthesis of oxaloacetate
+                <input class="control-path" id="anapleu" type="checkbox" onchange="anapleu();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Aspartate et asparagine metabolism
+                <input class="control-path" id="aspartate" type="checkbox" onchange="aspartate();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Ethanol fermentation
+                <input class="control-path" id="ethanol" type="checkbox" onchange="ethanol();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Glutathione metabolism
+                <input class="control-path" id="glutathione" type="checkbox" onchange="glutathione();"/>
+                <div class="control_indicator"></div>
+            </label>
+            <label class="control control-checkbox">
+              Glycogen metabolism
+                <input class="control-path" id="glycogen" type="checkbox" onchange="glycogen();"/>
+                <div class="control_indicator"></div>
+            </label><br/>
+            <label class="control control-checkbox">
+              Selenocystein biosynthesis
+                <input class="control-path" id="seleno" type="checkbox" onchange="seleno();"/>
+                <div class="control_indicator"></div>
+            </label><br/>
+            <label class="control control-checkbox">
+                Physarum reactions
+                  <input class="control-path" id="physhow" type="checkbox" onchange="phyShow();"/>
+                  <div class="control_indicator"></div>
+              </label><br/>
+                <input type="button" id="checkall1" class="btn" value="Un/check All" onclick="allPath()">  
+       </div> 
+      </div>
+
+  <!-- Algo modal -->
+           <!-- Options modal -->
+           <div id="algoModal" class="modal">
+            <!-- Modal content -->
+         <div class="algo-modal-content">
+           <div id="path">
+            <span class="close">&times;</span>
+                Change algorithm <br/>
+              <label class="control control-checkbox">
+                Random
+                  <input class="control-path" id="random" type="checkbox" onchange="random();" />
+                  <div class="control_indicator"></div>
+              </label>
+              <label class="control control-checkbox">
+                Grid
+                  <input class="control-path" id="grid" type="checkbox" onchange="grid();" />
+                  <div class="control_indicator"></div>
+              </label>
+              <label class="control control-checkbox">
+                Circle
+                  <input class="control-path" id="circle" type="checkbox" onchange="circle();" />
+                  <div class="control_indicator"></div>
+              </label>
+              <label class="control control-checkbox">
+                Concentric
+                  <input class="control-path" id="concentric" type="checkbox" onchange="concentric();" />
+                  <div class="control_indicator"></div>
+              </label>
+              <label class="control control-checkbox">
+                Breadthfirst
+                  <input class="control-path" id="breadthfirst" type="checkbox" onchange="breadthfirst();" />
+                  <div class="control_indicator"></div>
+              </label>
+           </div>
+        </div>
+           </div>
+
+    <!-- User toolbar -->
+    <div id="config" class="config">
+      <!-- File manager -->
+      <!-- File manager -->
+      <div class="param">
+        <a href="input">
+          <input class="btn" type="button" value="Upload File" />
+        </a>
+        <btn class="btn btn-default" onclick="optionsModal();"></span>Layout options<i class="fab fa-whmcs"></i></btn>   
+        <btn class="btn btn-default" onclick="algoModal();"></span>Change algorithm<i class="fab fa-whmcs"></i></btn>           
+        <btn class="btn btn-default" onclick="exportPng();"></span>Export png<i class="far fa-save"></i></btn>
+        <a href="model.json" download>
+        	<btn class="btn ">Export Physarum as JSON<i class="far fa-save"></i></btn>
+        </a>
+        <a href="blob.xml" download>
+        	<btn class="btn">Export Physarum as SBML<i class="far fa-save"></i></btn>
+        </a>
+        <btn class="btn btn-default" onclick="reloadCanvas();">Refresh page<i class="fas fa-sync-alt"></i></btn>
+        <div class="btn checkbtn" id="ck-button">
+          <label>
+             <input checked="checked" id="checkhide" type="checkbox" onchange="hideShow();"><span id="hideshow">Hide compounds<i class="fa fa-eye-slash"></i></span>
+          </label>
+       </div>
+      </div>
+
+      <!-- Source info -->
+      <div class="preamble">
+        <span class="label label-info">Network viewer for biology</span>
+        <p>
+          Supported files: <a href="https://www.json.org/json-fr.html">JSON</a><br/>
+          Visualisation by <a href="http://js.cytoscape.org">Cytoscape.js</a><br/>
+        Based on the Stylesheets from <a href="http://js.cytoscape.org/demos/colajs-graph/">Cola.js/Cytoscape js demo</a><br/>
+        </p>
+        <span class="label wiki label-info"><a id="wiki" href="https://amelaporte.github.io/WikiViewer">Documentation</a></span>
+      </div>
+    </div>
+
+    <script src="js/vis_user.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/openform.js"/></script>
+    <script src="js/showHide.js"/></script>
+    <script src="js/layoutOptions.js"/></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="../../js/jquery.1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../../js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="../../js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../../js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="../../js/contact_me.js"></script>
+
+    <!-- Javascripts -->
+    <script type="text/javascript" src="../../js/main.js"></script>
+  </body>
+</html>

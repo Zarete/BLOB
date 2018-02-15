@@ -1,0 +1,207 @@
+#viewport {
+    width:80%;
+    height:100%;
+    /*float: left;*/
+    position: fixed;
+
+}
+
+#buttons {
+    position: relative;
+    border-width:5px;
+    border-style: solid;
+    float: right;
+    height: 100%;
+    width: 20%;
+}
+
+
+.button{
+    position:absolute;
+    left: 30%;
+}
+
+#load {
+    top: 100px;
+    right: 50%;
+}
+
+#shiny {
+    top: 400px;
+}
+
+#browse{
+  top: 70px;
+  /*right: 100px;*/
+}
+
+#clear{
+  top: 150px;
+  /*right: 50%;*/
+}
+
+#dock {
+    top: 300px;
+    left: 30%;
+    position:relative;
+}
+
+
+#listProteins{
+    position:absolute;
+    left: 15%;
+    top: 700px;
+}
+
+.dockButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dockButton:hover, .dockButton:focus {
+    background-color: #3e8e41;
+}
+
+.dock {
+    position: relative;
+    display: inline-block;
+    top: 300px;
+    left: 30%;
+}
+
+#mySelect1 {
+    /*display: none;*/
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#mySelect2 {
+    top: 25px;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dockProts {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dockProteins a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dock a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    top: 500px;
+    left: 20%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+
+/* Popup container */
+.popup {
+   position: relative;
+   cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+   visibility: hidden;
+   width: 160px;
+   background-color: #555;
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 8px 0;
+   position: absolute;
+   z-index: 1;
+   /*bottom: 125%;*/
+   left: 50%;
+   margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+   content: "";
+   position: absolute;
+   /*top: 100%;*/
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+   visibility: visible;
+   -webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity:1 ;}
+}

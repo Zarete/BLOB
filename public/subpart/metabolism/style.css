@@ -1,0 +1,334 @@
+
+#cy {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 17em;
+}
+
+.config {
+  position: absolute;
+  right: 0;
+  top: 2em;
+  bottom: 0;
+  width: 17em;
+  background: #2d3436;
+  box-sizing: border-box;
+  padding: 1em;
+  color: #fff;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+  overflow: auto;
+  z-index: 1;
+}
+
+.preamble{
+  margin-top: 12em;
+}
+
+p {
+  margin: 0.5em 0;
+  font-size: 0.8em;
+}
+
+.param{
+  margin-top: 2em;
+}
+.bouton-aligne.btn{
+  display: inline;
+}
+.bouton-aligne.btn-sync{
+  text-align: center;
+}
+
+div label input {
+  margin-right:100px;
+}
+body {
+   font-family:sans-serif;
+}
+.param .checkbtn{
+  margin-left: 40px;
+  margin-top:10px;
+}
+.param .btn label span {
+   margin-top:3px;
+   text-align:center;
+   display:block;
+   cursor: pointer;
+}
+.param .btn label input {
+   position:absolute;
+   top:-20px;
+}
+
+.param .btn {
+  text-align: center;
+  width:100%;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 10px;
+  padding: 5px 5px 5px 5px;
+  font-weight: 500;
+  color: #000000; 
+  background-color: #fff; 
+} 
+ 
+.btn:hover, 
+.btn:focus, 
+.btn:active, 
+.btn.active, 
+.open .dropdown-toggle.btn { 
+  color: #000000; 
+  background-color: #E75926; 
+  border-color: #E75926; 
+} 
+ 
+.param .btn:active, 
+.param .btn-sample.active, 
+.param .dropdown-toggle.btn { 
+  background-image: none; 
+} 
+ 
+.btn.disabled, 
+.btn[disabled], 
+fieldset[disabled] .btn, 
+.btn.disabled:hover, 
+.btn[disabled]:hover, 
+fieldset[disabled] .btn:hover, 
+.btn.disabled:focus, 
+.btn[disabled]:focus, 
+fieldset[disabled] .btn:focus, 
+.btn.disabled:active, 
+.btn[disabled]:active, 
+fieldset[disabled] .btn:active, 
+.btn.disabled.active, 
+.btn[disabled].active, 
+fieldset[disabled] .btn.active { 
+  background-color: #fff; 
+  border-color: #E75926; 
+} 
+ 
+.btn .badge { 
+  color: #fff; 
+  background-color: #000000; 
+}
+a,
+a:hover {
+  color: #E75926;
+}
+
+.label {
+  display: inline-block;
+  background-color: #E75926;
+  text-align: center;
+  width: 100%;
+}
+
+.slider {
+  display: block;
+}
+
+.config-closed .config {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.config-closed #cy {
+  right: 0;
+}
+
+@media (max-width: 600px){
+  #cy {
+    right: 0;
+  }
+}
+
+ /* The Modal (background) */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.control-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 325px;
+  height: 460px;
+}
+.algo-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  height: 150px;
+}
+.form-modal-content{
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+#checkall{
+  position: absolute;
+}
+#png{
+  width: 95%;
+}
+#wiki{
+  color: #fff;
+}
+.wiki{
+  width: 100%;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+.control {
+  font-family: arial;
+  margin-left: 20px;
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 3px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+  .control input {
+    display: inline-block;
+    margin-inline-start: 0%;
+      z-index: -1;
+      opacity: 0;
+  }
+
+.control_indicator {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border: 0px solid #000000;
+}
+.control-radio .control_indicator {
+  border-radius: undefined%;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #cccccc;
+}
+
+.control #glycolyse:checked ~ .control_indicator{
+  background: #D6A2E8;
+}
+.control #krebs:checked ~ .control_indicator{
+  background: #55E6C1;
+}
+.control #hexose:checked ~ .control_indicator{
+  background: #F8EFBA;
+}
+.control #pentose:checked ~ .control_indicator{
+  background: #1B9CFC;
+}
+.control #neoglu:checked ~ .control_indicator{
+  background: #CAD3C8;
+}
+.control #oxipyr:checked ~ .control_indicator{
+  background: #3B3B98;
+}
+.control #anapleu:checked ~ .control_indicator{
+  background: #B33771;
+}
+.control #aspartate:checked ~ .control_indicator{
+  background: #EAB543;
+}
+.control #ethanol:checked ~ .control_indicator{
+  background: #FC427B;
+}
+.control #glutathione:checked ~ .control_indicator{
+  background: #BDC581;
+}
+.control #glycogen:checked ~ .control_indicator{
+  background: #f78fb3;
+}
+.control #seleno:checked ~ .control_indicator{
+  background: #82589F;
+}
+.control #phyShow:checked ~ .control_indicator {
+  background: #e75626;
+}
+
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #e75926;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-checkbox .control_indicator:after {
+  left: 7px;
+  top: 2px;
+  width: 3px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: hsl(0, 0%, 48%);
+}
+#hideshow{
+  margin: auto;
+  margin-left: 37%;
+  text-align: center;
+  font-size: 10px;
+}

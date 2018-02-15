@@ -1,0 +1,7 @@
+[["match_part"],"annotation","match_part","Scaffold5313",723,811]
+[["match_part"],"annotation","match_part","Scaffold5313",1077,1137]
+[["match_part"],"annotation","match_part","Scaffold5313",1375,1459]
+[["match_part"],"annotation","match_part","Scaffold5313",2773,2848]
+[["match_part"],"annotation","match_part","Scaffold5313",2999,3096]
+[["match_part"],"annotation","match_part","Scaffold5313",3340,3490]
+[["match_part"],"annotation","match_part","Scaffold5313",3629,3661]

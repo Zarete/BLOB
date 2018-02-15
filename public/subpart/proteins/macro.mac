@@ -1,0 +1,5 @@
+open_receptor /net/cremi/arohan/espaces/travail/BlobProtein/ProteinPDB/1A73.pdb
+open_ligand /net/cremi/arohan/espaces/travail/BlobProtein/ProteinPDB/2BL0.pdb
+activate_docking
+save_both /autofs/netapp/travail/arohan/BlobProtein/ProteinPDB/both.pdb
+exit

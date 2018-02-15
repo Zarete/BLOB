@@ -1,0 +1,5 @@
+[["match_part"],"annotation","match_part","Scaffold11038",1870,1874]
+[["match_part"],"annotation","match_part","Scaffold11038",1874,1881]
+[["match_part"],"annotation","match_part","Scaffold11038",1884,1929]
+[["match_part"],"annotation","match_part","Scaffold11038",1956,2074]
+[["match_part"],"annotation","match_part","Scaffold11038",2075,2310]

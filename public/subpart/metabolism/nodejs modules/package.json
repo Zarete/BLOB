@@ -1,0 +1,14 @@
+{
+  "name": "Projet_visualisation_DAG_and_Treemap",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node serveur_express.js"
+  },
+  "dependencies": {
+    "base64-img": "^1.0.3",
+    "express": "~4.10.2",
+    "express-fileupload": "^0.1.2",
+    "python-shell": "0.4.0"
+  }
+}

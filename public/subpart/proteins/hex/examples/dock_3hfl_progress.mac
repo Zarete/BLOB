@@ -1,0 +1,23 @@
+#
+#  dock_3hfl_progress.mac - local docking to test recognition of bound subunits
+#
+#  demonstrates how to define a progress file instead of a GUI progress bar.
+#
+
+LIGAND_RANGE_ANGLE         45
+RECEPTOR_RANGE_ANGLE      180
+TWIST_RANGE_ANGLE         360
+
+R12_RANGE                  15
+R12_STEP                 0.75
+GRID_SIZE                0.6
+
+DOCKING_MAIN_SCAN          16
+DOCKING_MAIN_SEARCH        25
+
+RUN_MACRO 3hfl.mac
+
+PROGRESS_FILE              boinc_fraction_done.txt
+
+ACTIVATE_DOCKING
+

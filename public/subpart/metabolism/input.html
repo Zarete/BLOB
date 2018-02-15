@@ -1,0 +1,34 @@
+<!DOCTYPE html">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Input file</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+
+    <div id="maDivGauche">
+    <div class="how">
+      <p> <strong>INDICATIONS </strong></p>
+      <p> A JSON file must be imported in order to create the network. </p>
+      <p> An example of the structure expected is found below : </p>
+      <p> Your input file must be name: inputfile.json</p>
+      <p> <img id=rep src="pictures/model.png" alt="ex1" class="image1"> </p>
+
+    </div>
+    </div>
+
+    <div id="maDivDroite">
+		<p> <strong>INPUT </strong></p>
+    <form action="/uploadFile" method="post" enctype="multipart/form-data">
+      <dd><input type="file" name="file1" /></dd>
+      <dd><input type="submit" value="Send the files" /></dd>
+    </form>
+    <a href="visInput">
+      <input type="button" value="Upload new visualization" />
+    </a>
+	</div>
+
+  </body>
+</html>

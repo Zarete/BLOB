@@ -1,0 +1,4 @@
+This tool use Cytoscape.js to generate networks from JSON file. You can zoom and interact with the network and save your work in a png file. 
+For visibility purpose, you can hide or show the secondary compounds that occurs during the reactions. As well as highlighting any pathway available.
+
+It was created by Maïra Barca, Jeremy Destin, Amelie Laporte, Adrien Mendes Santos and Frezza Razafimafonty.

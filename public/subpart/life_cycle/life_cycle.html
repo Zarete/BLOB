@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blob Life Cycle</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome/css/font-awesome.css">
+
+  <!-- Stylesheet
+    ================================================== -->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../css/prettyPhoto.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="../../js/modernizr.custom.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <link rel='stylesheet' type='text/css' href='blob.css' />
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <i class="fa fa-paper-plane-o"></i> Life cycle</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../../index.html">Home</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../annotation/annotation.html">Genomic</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../proteins/proteins.html">Proteomic</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../metabolism/metabolism.html">Metabolomic</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="../movement/movement.html">Movement</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- START SIGMA IMPORTS -->
+  <script src="./sigma/src/sigma.core.js"></script>
+  <script src="./sigma/src/conrad.js"></script>
+  <script src="./sigma/src/utils/sigma.utils.js"></script>
+  <script src="./sigma/src/utils/sigma.polyfills.js"></script>
+  <script src="./sigma/src/sigma.settings.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.dispatcher.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.configurable.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.graph.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.camera.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.quad.js"></script>
+  <script src="./sigma/src/classes/sigma.classes.edgequad.js"></script>
+  <script src="./sigma/src/captors/sigma.captors.mouse.js"></script>
+  <script src="./sigma/src/captors/sigma.captors.touch.js"></script>
+  <script src="./sigma/src/renderers/sigma.renderers.canvas.js"></script>
+  <script src="./sigma/src/renderers/sigma.renderers.webgl.js"></script>
+  <script src="./sigma/src/renderers/sigma.renderers.svg.js"></script>
+  <script src="./sigma/src/renderers/sigma.renderers.def.js"></script>
+  <script src="./sigma/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+  <script src="./sigma/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+  <script src="./sigma/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+  <script src="./sigma/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+  <script src="./sigma/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+  <script src="./sigma/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.utils.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.edges.def.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.labels.def.js"></script>
+  <script src="./sigma/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+  <script src="./sigma/src/middlewares/sigma.middlewares.rescale.js"></script>
+  <script src="./sigma/src/middlewares/sigma.middlewares.copy.js"></script>
+  <script src="./sigma/src/misc/sigma.misc.animation.js"></script>
+  <script src="./sigma/src/misc/sigma.misc.bindEvents.js"></script>
+  <script src="./sigma/src/misc/sigma.misc.bindDOMEvents.js"></script>
+  <script src="./sigma/src/misc/sigma.misc.drawHovers.js"></script>
+  <!-- END SIGMA IMPORTS -->
+  <script src="sigma/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
+
+  <div id="intro" style="background-image: url('image/blackM.jpg')">
+
+    <div class="intro-body">
+
+      <div class="container" style = "padding-top : 5%">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="col-md-8">
+
+              <img src="image/blob.png" style="left:0%; width:100%; height: 100%">
+              <!-- <img src="image/blackM.jpg" style="right:0%; top:9%; width:35.5%; height: 92%"> -->
+              <canvas onclick="aff_info(0)" style="left:5%; top:42%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(1)" style="left:25%; top:42%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(2)" style="left:10%; top:10%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(3)" style="left:32%; top:0%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(4)" style="left:54%; top:4%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(5)" style="left:78%; top:8%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(6)" style="left:79%; top:42.5%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(8)" style="left:60%; top:42%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(9)" style="left:68%; top:72.5%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(7)" style="left:45%; top:80%; width:12%; height:18%"></canvas>
+
+              <canvas onclick="aff_info(10)" style="left:21%; top:73%; width:12%; height:18%"></canvas>
+
+            </div>
+
+            <div class="col-md-4">
+
+              <div class="row" style="height:200px">
+                <div class="col-md-12">
+                  <!-- <hr class="separation" /> -->
+                  <p id='ton_texte' style="height:200px; font-size:18px; overflow:auto"></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12" style="margin-top : 50px">
+                  <div id="graph-container" style="height:200px; width:100%;  display:inline-block; position:relative; left:-50%"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="blob.js"></script>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <p>Copyright &copy; Modus. Designed by
+        <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="../../js/jquery.1.11.1.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript" src="../../js/bootstrap.js"></script>
+  <script type="text/javascript" src="../../js/SmoothScroll.js"></script>
+  <script type="text/javascript" src="../../js/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="../../js/jquery.isotope.js"></script>
+  <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
+  <script type="text/javascript" src="../../js/jqBootstrapValidation.js"></script>
+  <script type="text/javascript" src="../../js/contact_me.js"></script>
+
+  <!-- Javascripts
+        ================================================== -->
+  <script type="text/javascript" src="../../js/main.js"></script>
+</body>
+
+</html>

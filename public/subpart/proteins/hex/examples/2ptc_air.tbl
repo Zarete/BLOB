@@ -1,0 +1,251 @@
+! HADDOCK AIR restraints for 1st partner
+!
+assign (resid 39 and segid E)
+       (
+       (resid 17 and segid I)
+   or
+       (resid 18 and segid I)
+   or
+       (resid 19 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 40 and segid E)
+       (
+       (resid 17 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 41 and segid E)
+       (
+       (resid 16 and segid I)
+   or
+       (resid 17 and segid I)
+   or
+       (resid 18 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 57 and segid E)
+       (
+       (resid 14 and segid I)
+   or
+       (resid 15 and segid I)
+   or
+       (resid 16 and segid I)
+   or
+       (resid 37 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 97 and segid E)
+       (
+       (resid 39 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 99 and segid E)
+       (
+       (resid 38 and segid I)
+   or
+       (resid 39 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 151 and segid E)
+       (
+       (resid 17 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 189 and segid E)
+       (
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 190 and segid E)
+       (
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 191 and segid E)
+       (
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 192 and segid E)
+       (
+       (resid 14 and segid I)
+   or
+       (resid 15 and segid I)
+   or
+       (resid 16 and segid I)
+   or
+       (resid 17 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 193 and segid E)
+       (
+       (resid 15 and segid I)
+   or
+       (resid 16 and segid I)
+   or
+       (resid 17 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 194 and segid E)
+       (
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 195 and segid E)
+       (
+       (resid 15 and segid I)
+   or
+       (resid 16 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 214 and segid E)
+       (
+       (resid 14 and segid I)
+   or
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 215 and segid E)
+       (
+       (resid 13 and segid I)
+   or
+       (resid 14 and segid I)
+   or
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 216 and segid E)
+       (
+       (resid 13 and segid I)
+   or
+       (resid 15 and segid I)
+       )
+       2.0 2.0 0.0
+!
+! HADDOCK AIR restraints for 2nd partner
+!
+assign (resid 13 and segid I)
+       (
+       (resid 215 and segid E)
+   or
+       (resid 216 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 14 and segid I)
+       (
+       (resid 57 and segid E)
+   or
+       (resid 192 and segid E)
+   or
+       (resid 214 and segid E)
+   or
+       (resid 215 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 15 and segid I)
+       (
+       (resid 57 and segid E)
+   or
+       (resid 189 and segid E)
+   or
+       (resid 190 and segid E)
+   or
+       (resid 191 and segid E)
+   or
+       (resid 192 and segid E)
+   or
+       (resid 193 and segid E)
+   or
+       (resid 194 and segid E)
+   or
+       (resid 195 and segid E)
+   or
+       (resid 214 and segid E)
+   or
+       (resid 215 and segid E)
+   or
+       (resid 216 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 16 and segid I)
+       (
+       (resid 41 and segid E)
+   or
+       (resid 57 and segid E)
+   or
+       (resid 192 and segid E)
+   or
+       (resid 193 and segid E)
+   or
+       (resid 195 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 17 and segid I)
+       (
+       (resid 39 and segid E)
+   or
+       (resid 40 and segid E)
+   or
+       (resid 41 and segid E)
+   or
+       (resid 151 and segid E)
+   or
+       (resid 192 and segid E)
+   or
+       (resid 193 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 18 and segid I)
+       (
+       (resid 39 and segid E)
+   or
+       (resid 41 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 19 and segid I)
+       (
+       (resid 39 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 37 and segid I)
+       (
+       (resid 57 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 38 and segid I)
+       (
+       (resid 99 and segid E)
+       )
+       2.0 2.0 0.0
+!
+assign (resid 39 and segid I)
+       (
+       (resid 97 and segid E)
+   or
+       (resid 99 and segid E)
+       )
+       2.0 2.0 0.0

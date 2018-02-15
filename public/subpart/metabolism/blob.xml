@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="UTF_8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+
+<model id="Physarum_metabo" name="Physarum_polycephalum_metabolism">
+<listOfUnitDefinitions>
+	<unitDefinition id="mmol_per_gDW_per_hr">
+		<listOfUnits>
+			<unit kind="mole" scale="-3"/>
+			<unit kind="gram" exponent="-1"/>
+			<unit kind="second" multiplier=".00027777" exponent="-1"/>
+		</listOfUnits>
+	</unitDefinition>
+</listOfUnitDefinitions>
+
+<listOfCompartments>
+	<compartment id="Extra_organism" />
+	<compartment id="c" name="Cytosol" />
+	<compartment id="m" name="Mitochondria" />
+</listOfCompartments>
+  <listOfSpecies>
+<!-- Elements blob -->
+    <species id="P_mlcp" name="Myosin_light_chain_phosphate"/>
+    <species id="P_h2o" name="H2O"/>
+    <species id="P_mlc" name="Myosin_light_chain"/>
+    <species id="P_phosmlc" name="Phosphate"/>
+    <species id="P_atpphn" name="ATP"/>
+    <species id="P_proth" name="Protein_histidine"/>
+    <species id="P_adpphn" name="ADP"/>
+    <species id="P_protnph" name="Protein_N(pi)-phospho-L-histidine"/>
+    <species id="P_atpaph" name="ATP"/>
+    <species id="P_thym" name="Thymidine"/>
+    <species id="P_adpaph" name="ADP"/>
+    <species id="P_dTMPaph" name="dTMP"/>
+    <species id="P_nadhnafer" name="NADH"/>
+    <species id="P_ferrnafer" name="Ferricytochrome_b5"/>
+    <species id="P_fernaferr" name="Ferricytochrome_b5"/>
+    <species id="P_nanaferr" name="NAD+"/>
+    <species id="P_feroonadfer" name="Ferrocytochrome_b5"/>
+    <species id="P_ferronadfer" name="Ferrocytochrome_b5"/>
+    <species id="P_hplnadhferr" name="H+"/>
+    <species id="P_tetrahy" name="Tetrahydropteridine"/>
+    <species id="P_nadpltetr" name="NAD+"/>
+    <species id="P_dihytetr" name="Dihydropteridine"/>
+    <species id="P_nadhtetrana" name="NADH"/>
+    <species id="P_hpltetrana" name="H+"/>
+    <species id="P_udpacegluc" name="UDP-N-acetyl-alpha-D-glucosamine"/>
+    <species id="P_udpacegal" name="UDP-N-acetyl-D-galactosamine"/>
+    <species id="P_ornith" name="L-Ornithine"/>
+    <species id="P_putre" name="Putrescine"/>
+    <species id="P_co2orni" name="CO2"/>
+    <species id="P_caa" name="Cyclic_adenylic_acid"/>
+    <species id="P_h20apn" name="H20"/>
+    <species id="P_aa" name="Adenylic_acid"/>
+    <species id="P_atpapn" name="ATP"/>
+    <species id="P_atpampp" name="Adenylic_acid"/>
+    <species id="P_atpampp" name="Adp"/>
+    <species id="P_udpglu" name="UDP_glucose"/>
+    <species id="P_stero" name="Sterol"/>
+    <species id="P_udpudpg" name="UDP"/>
+    <species id="P_s3bdg" name="Sterol_3-beta-D-glucoside"/>
+    <species id="P_salm" name="S-Adenosyl-L-methionine"/>
+    <species id="P_hll" name="Histone-L-lysine"/>
+    <species id="P_salh" name="S-Adenosyl-L-homocysteine"/>
+    <species id="P_hnmll" name="Histone_N6-methyl-L-lysine"/>
+    <species id="P_lge" name="L-glutamine"/>
+    <species id="P_alkne" name="Alkylamine"/>
+    <species id="P_pnalk" name="Protein N5-alkylglutamine"/>
+    <species id="P_Amnia" name="NH3"/>
+    <species id="P_amyl" name="Amylose"/>
+    <species id="P_phte" name="Phosphate"/>
+    <species id="P_amyl14adgoadg" name="Amylose"/>
+    <species id="P_dg1p" name="D-Glucose_1-phosphate"/>
+    <species id="P_ppbtte" name="P1,P4-Bis(5'-adenosyl)tetraphosphate"/>
+    <species id="P_h20ppbtn" name="H20"/>
+    <species id="P_atpppbtn" name="Adp"/>
+<!--Reseau-->
+<!-- Degradation des hexoses -->
+    <species id="M_atpdfruase_hexose" name="ATP"/>
+    <species id="M_df1pfruase_hexose" name="D-fructose_1-phosphate"/> 
+    <species id="M_adpdfruase_hexose" name="ADP"/> 
+    <species id="M_bdglu1p_hexose" name="beta-D-glucose_1-phosphate"/> 
+    <species id="M_adglu1p_hexose" name="alpha-D-glucose_1-phosphate"/> 
+    <species id="M_adgal1p_hexose" name="alpha-D-galactose_1-phosphate"/> 
+    <species id="M_udpadgal_hexose" name="UDP-alpha-D-galactose"/>
+    <species id="M_udpadgluc_hexose" name="UDP-alpha-D-glucose"/> 
+    <species id="M_utpadh1_hexose" name="UTP"/> 
+    <species id="M_ppiadh1_hexose" name="PPi"/> 
+    <species id="M_adpgal1ptr_hexose" name="ADP"/> 
+    <species id="M_dgalgal1ptr_hexose" name="D-galactose"/> 
+    <species id="M_atpgal1ptr_hexose" name="ATP"/>
+    <species id="M_utpadglu1_hexose" name="UTP"/>
+    <species id="M_ppiadglu1_hexose" name="PPi"/>
+<!-- Glycolyse -->
+    <species id="M_gluhextrase_glycolyse" name="Glucose" compartment="Cytosol"/>
+    <species id="M_GluATP_glycolyse" name="ATP" compartment="Cytosol"/>
+    <species id="M_G6Phextrase_glycolyse" name="Glucose_6_phosphate" compartment="Cytosol"/>
+    <species id="M_G6PADP_glycolyse" name="ADP_specific_glucokinase" compartment="Cytosol"/>
+    <species id="M_G6PH_glycolyse" name="H+" compartment="Cytosol"/>
+    <species id="M_F6Pglugen_glycolyse" name="Fructose_6_Phosphate" compartment="Cytosol"/>
+    <species id="M_ATPF6P_glycolyse" name="ATP" compartment="Cytosol"/>
+    <species id="M_ADPF6P_glycolyse" name="ADP" compartment="Cytosol"/>
+    <species id="M_HF6P_glycolyse" name="H+" compartment="Cytosol"/>
+    <species id="M_F16BP_glycolyse" name="Fructose_1_6_Biphosphate" compartment="Cytosol"/>
+    <species id="M_G3Pglugen_glycolyse" name="D_glycéraldéhyde_3_phosphate" compartment="Cytosol"/>
+    <species id="M_DHAPglugen_glycolyse" name="Dihydroxyacétone_phosphate" compartment="Cytosol"/>
+    <species id="M_G3P_NAD_glycolyse" name="NAD+" compartment="Cytosol"/>
+    <species id="M_G3P_Pi_glycolyse" name="Pi" compartment="Cytosol"/>
+    <species id="M_G3P_NADH_glycolyse" name="NADH" compartment="Cytosol"/>
+    <species id="M_G3P_H_glycolyse" name="H+" compartment="Cytosol"/>
+    <species id="M_1_3_BPGglu_glycolyse" name="1_3_Bisphospho_D_Glycérate" compartment="Cytosol"/>
+    <species id="M_BPG_ADP_glycolyse" name="ADP" compartment="Cytosol"/>
+    <species id="M_BPG_ATP_glycolyse" name="ATP" compartment="Cytosol"/>
+    <species id="M_3PGglugen_glycolyse" name="3_Phospho_Glycerate" compartment="Cytosol"/>
+    <species id="M_2PGglugen_glycolyse" name="2_Phospho_Glycerate" compartment="Cytosol"/>
+    <species id="M_PEPglugen_glycolyse" name="Phosphoénolpyruvate" compartment="Cytosol"/>
+    <species id="M_PEP_H20_glycolyse" name="H2O" compartment="Cytosol"/>
+    <species id="M_Pyr_ADP_glycolyse" name="ADP" compartment="Cytosol"/>
+    <species id="M_Pyr_H_glycolyse" name="H+" compartment="Cytosol"/>
+    <species id="M_Pyr_ATP_glycolyse" name="ATP" compartment="Cytosol"/>
+    <species id="M_Pyrglugen_glycolyse" name="Pyruvate" compartment="Cytosol"/>
+<!-- Pentose Phosphate -->
+    <species id="M_NADPHlac_pentose" name="NADPH"/>
+    <species id="M_NADPlac_pentose" name="NADP+"/>
+    <species id="M_NADPcyclo_pentose" name="NADP+"/>
+    <species id="M_Hcyclo_pentose" name="NADP+"/>
+    <species id="M_NADPHcyclo_pentose" name="NADP+"/>
+    <species id="M_CO2cyclo_pentose" name="NADP+"/>
+    <species id="M_NADPglate_pentose" name="NADP+"/>
+    <species id="M_NADPHglate_pentose" name="NADPH"/>
+    <species id="M_Hglate_pentose" name="H+"/>
+    <species id="M_H2Ofrate_pentose" name="H2O"/>
+    <species id="M_NADphy_pentose" name="NAD+"/>
+    <species id="M_NADHphy_pentose" name="NADH"/>
+    <species id="M_CO2phy_pentose" name="CO2"/>
+    <species id="M_Hphy_pentose" name="H+"/>
+    <species id="M_NADHoxred_pentose" name="NADH"/>
+    <species id="M_NADoxred_pentose" name="NAD+"/>
+    <species id="M_6_Glclac_pentose" name="6-phospho-D-glucono-1,5-lactone"/>
+    <species id="M_H2Olachase_pentose" name="H2O"/>
+    <species id="M_Hlachase_pentose" name="H+"/>
+    <species id="M_Hlac_pentose" name="H+"/>
+    <species id="M_Hoxred_pentose" name="H+"/>
+    <species id="M_GA6P_pentose" name="6-phosphogluconate"/>
+    <species id="M_ribu_5P_pentose" name="D-ribulose 5-phosphate"/>
+    <species id="M_ribofur_5P_pentose" name="D-ribofuranose 5-phosphate"/>
+    <species id="M_CO2glate_pentose" name="carbon dioxide"/>
+    <species id="M_CH2O_pentose" name="formaldehyde"/>
+    <species id="M_H6P_pentose" name="D-arabino-hex-3-ulose 6-phosphate"/>
+    <species id="M_D_XUL5P_pentose" name="D-xylulose 5-phosphate"/>
+    <species id="M_Pifrate_pentose" name="phosphate"/>
+    <species id="M_S7P_pentose" name="sedoheptulose 7-phosphate"/>
+    <species id="M_GAP_pentose" name="D-glyceraldehyde 3-phosphate"/>
+    <species id="M_D_SEDU1_7P_pentose" name="sedoheptulose 1,7-bisphosphate"/>
+    <species id="M_E4P_pentose" name="D-erythrose 4-phosphate"/>
+    <species id="M_ALPGA_D_G6P_pentose" name="alpha-D-glucose 6-phosphate"/>
+<!-- Neoglucogenese -->
+    <species id="M_Oxalo_neoglu" name="oxaloacetate" compartment="Mitochondria"/>
+    <species id="M_co2_neoglu" name="CO2" compartment="Mitochondria"/>
+    <species id="M_atp_neoglu" name="ATP" compartment="Mitochondria"/>
+    <species id="M_gtp_neoglu" name="GTP" compartment="Mitochondria"/>
+    <species id="M_coo_neoglu" name="CO2" compartment="Cytosol"/> 
+<!-- Oxidative decarboxylation of pyruvate -->
+    <species id="M_nadoxdpy_oxipyr" name="NAD+" compartment="Mitochondria"/>
+    <species id="M_nadhoxdpy_oxipyr" name="NADH" compartment="Mitochondria"/>
+    <species id="M_hploxdpy_oxipyr" name="H+" compartment="Mitochondria"/>
+    <species id="M_co2oxdpy_oxipyr" name="CO2" compartment="Mitochondria"/>
+    <species id="M_coashoxdpy_oxipyr" name="CoA-SH" compartment="Mitochondria"/>
+<!-- Anapleurotic synthesis of oxaloacetate -->
+    <species id="M_atppece_anapleu" name="ATP" compartment="Mitochondria"/>
+    <species id="M_hc03pece_anapleu" name="HCO3-" compartment="Mitochondria"/>
+    <species id="M_adppece_anapleu" name="ADP" compartment="Mitochondria"/>
+    <species id="M_phosppece_anapleu" name="phosphate" compartment="Mitochondria"/>
+    <species id="M_hfgfce_anapleu" name="H+"/>
+<!-- Cycle de Krebs -->
+    <species id="M_ACetC_krebs" name="Acetely_CoA" compartment="Mitochondria"/>
+    <species id="M_Oxalo_H20_krebs" name="H20" compartment="Mitochondria"/>
+    <species id="M_Citrate_krebs" name="Citrate" compartment="Mitochondria"/>
+    <species id="M_CoASH_krebs" name="CoA_SH" compartment="Mitochondria"/>
+    <species id="M_CisA_krebs" name="Cis_Aconitate" compartment="Mitochondria"/>
+    <species id="M_Cis_H20_krebs" name="H20" compartment="Mitochondria"/>
+    <species id="M_Isocitrate_krebs" name="Isocitrate" compartment="Mitochondria"/>
+    <species id="M_IsoNAD_krebs" name="NAD+" compartment="Mitochondria"/>
+    <species id="M_IsoNADH_krebs" name="NADH" compartment="Mitochondria"/>
+    <species id="M_IsoH_krebs" name="H+" compartment="Mitochondria"/>
+    <species id="M_Oxalosuccinate_krebs" name="Oxalosuccinate" compartment="Mitochondria"/>
+    <species id="M_alphaC_krebs" name="Alpha_cetoglutarate" compartment="Mitochondria"/>
+    <species id="M_alphaC_CO2_krebs" name="CO2" compartment="Mitochondria"/>
+    <species id="M_alphaC_NAD_krebs" name="NAD+" compartment="Mitochondria"/>
+    <species id="M_alphaC_CoA_krebs" name="CoA_SH" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_krebs" name="Succinyl_CoA" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_NADH_krebs" name="NADH" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_H_krebs" name="H+" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_CO2_krebs" name="CO2" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_GDP_krebs" name="GDP" compartment="Mitochondria"/>
+    <species id="M_Suc_CoA_Pi_krebs" name="Pi" compartment="Mitochondria"/>
+    <species id="M_Succinate_krebs" name="Succinate" compartment="Mitochondria"/>
+    <species id="M_Succinate_SH_krebs" name="CoA_SH" compartment="Mitochondria"/>
+    <species id="M_Succinate_GTP_krebs" name="GTP" compartment="Mitochondria"/>
+    <species id="M_CoQ10_krebs" name="CoQ10" compartment="Mitochondria"/>
+    <species id="M_Fumarate_krebs" name="Fumarate" compartment="Mitochondria"/>
+    <species id="M_CoQ10H2_krebs" name="CoQ10H2" compartment="Mitochondria"/>
+    <species id="M_Fum_H20_krebs" name="H20" compartment="Mitochondria"/>
+    <species id="P_malte_krebs" name="Malate" compartment="Mitochondria"/>
+    <species id="P_nadmno_krebs" name="NAD+" compartment="Mitochondria"/>
+    <species id="P_oxaetate_krebs" name="Oxaloacetate" compartment="Mitochondria"/>
+    <species id="P_nadhmno_krebs" name="NADH" compartment="Mitochondria"/>
+    <species id="P_hmno_krebs" name="H+" compartment="Mitochondria"/>
+<!-- Autres voies -->
+<!-- Aspartate et asparagine metabolism -->
+    <species id="M_Aspa_aspartate" name="L-Aspartate"/>
+    <species id="M_Aspt_ATP_aspartate" name="ATP"/>
+    <species id="M_Aspt_RNA_aspartate" name="tRNA"/>
+    <species id="M_Aspt_ARN_Lig_aspartate" name="Aspartate-tRNA_ligase"/>
+		<species id="M_Aspt_PPi_aspartate" name="PPi"/>
+		<species id="M_Aspt_AMP_aspartate" name="AMP"/>
+		<species id="M_Aspt_LAstyl_aspartate" name="L-Aspartyl-tRNA"/>
+    <species id="M_Carba_aspartate" name="Carbamoyl-P"/>
+		<species id="M_Aspt_Carba_aspartate" name="Aspartate_Carbamoyltransferase"/>
+		<species id="M_Car_Pi_aspartate" name="Pi"/>
+    <species id="M_Car_Asp_aspartate" name="N-Carbamoyl-L-Aspartate"/>
+    <species id="M_Oxy_aspartate" name="2-Oxoglutamate"/>
+    <species id="M_Asp_tminase_aspartate" name="Aspartate_transaminase"/>
+    <species id="M_Gluta_aspartate" name="L-Glutamate"/>
+    <species id="M_Ox_ace_aspartate" name="Oxaloacetate"/>
+		<species id="M_Ade_synt_aspartate" name="Adenylosuccinate_synthase"/>
+    <species id="M_Ade_GTP_aspartate" name="GTP"/>
+		<species id="M_Ade_Imp_aspartate" name="IMP"/>
+		<species id="M_Ade_Pi_aspartate" name="Pi"/>
+		<species id="M_Ade_GDP_aspartate" name="GDP"/>
+    <species id="M_Adeny_aspartate" name="Adenylosuccinate"/>
+    <species id="M_Aspg_gluine_aspartate" name="L-Glutamine"/>
+    <species id="M_Aspg_synt_aspartate" name="Asparagine_synthase"/>
+		<species id="M_Aspg_gluate_aspartate" name="L-Glutamate"/>
+    <species id="M_Aspg_aspartate" name="L-Asparagine"/>
+    <species id="M_Asn_tRNA_aspartate" name="tRNA"/>
+    <species id="M_Asn_ATP_aspartate" name="ATP"/>
+		<species id="M_Asn_tRNA_ligase_aspartate" name="Asparagine-tRNA_ligase"/>
+    <species id="M_Asn_AMP_aspartate" name="AMP"/>
+    <species id="M_Asn_PPi_aspartate" name="PPi"/>
+    <species id="M_Asn_aspartate" name="L-Asparaginyl-tRNA"/>
+<!-- Ethanol fermentation -->
+    <species id="M_accoafca_ethanol" name="acetyl-CoA"/>
+    <species id="M_forfca_ethanol" name="formate"/>
+    <species id="M_coafca_ethanol" name="CoA"/>
+    <species id="M_purfca_ethanol" name="pyruvate"/>
+    <species id="M_nadhada_ethanol" name="NADH"/>
+    <species id="M_hada_ethanol" name="H+"/>
+    <species id="M_nadada_ethanol" name="NAD+"/>
+    <species id="M_coada_ethanol" name="CoA"/>
+    <species id="M_acetlada_ethanol" name="acetaldehyde"/>
+    <species id="M_nadhad_ethanol" name="NADH"/>
+    <species id="M_hhad_ethanol" name="H+"/>
+    <species id="M_naddhad_ethanol" name="NAD+"/>
+    <species id="M_ethanad_ethanol" name="ethanol"/>
+    <species id="M_co2pdd_ethanol" name="CO2"/>
+    <species id="M_a2c_ethanol" name="a_2-oxo_carboxylate"/>  
+    <species id="M_adgse1p_ethanol" name="alpha-D-galactose_1-phosphate"/>  
+    <species id="M_adgse1ppp_ethanol" name="alpha-D-galactose_1-phosphate"/>  
+<!-- Glutathione metabolism -->
+    <species id="M_TrypD_glutathione" name="Trypanothione_disulfide"/>
+    <species id="M_TrypD_H2O_glutathione" name="H2O"/>
+    <species id="M_TrypD_ROOH_glutathione" name="ROOH"/>
+    <species id="M_TrypD_ROH_glutathione" name="ROH"/>
+    <species id="M_Tryp_glutathione" name="Trypanothione"/>
+    <species id="M_Tryp_ATP_glutathione" name="ATP"/>
+    <species id="M_Tryp_ADP_glutathione" name="ADP"/>
+    <species id="M_Orth_glutathione" name="Phosphate"/>
+    <species id="M_GlcSp_glutathione" name="Glutathionylspermidine"/>
+    <species id="P_glutglunadpox_glutathione" name="Glutathione"/>
+    <species id="M_GluT_glutathione" name="Glutathione"/>
+    <species id="P_glutnadpox_glutathione" name="Glutathione"/>
+    <species id="P_glutdisul_glutathione" name="Glutathione disulfide"/>
+    <species id="P_nadphnadpox_glutathione" name="NADPH"/>
+    <species id="P_hplnadpox_glutathione" name="H+"/>
+    <species id="P_nadpplnadpox_glutathione" name="NADP+"/>
+    <species id="M_Spermidine_glutathione" name="Spermidine"/>
+    <species id="M_Spermidine_ATP_glutathione" name="ATP"/>
+    <species id="M_RX_glutathione" name="RX"/>
+    <species id="M_HX_glutathione" name="HX"/>
+    <species id="M_RS_glutathione" name="R-S-glutathione"/>
+    <species id="M_glutathioneADP_glutathione" name="ADP"/>
+    <species id="M_glutathionePi_glutathione" name="Phosphate"/>
+    <species id="M_gammaLGLC_glutathione" name="Gamma-L-glutamyl-L-cysteine"/>
+    <species id="M_glutathioneATP_glutathione" name="ATP"/>
+    <species id="M_gammaNADP_glutathione" name="NADP+"/>
+    <species id="M_gammaNADPH_glutathione" name="NADPH"/>
+    <species id="M_gammaH_glutathione" name="H+"/>
+    <species id="M_Bgamma_glutathione" name="bis-gamma-glutamylcystine"/>
+    <species id="M_Lglut_ATP_glutathione" name="ATP"/>
+    <species id="M_Lglut_glutathione" name="L-glutamate"/>
+    <species id="M_Lcys_glutathione" name="L-cysteine"/>
+    <species id="M_Lglut_ADP_glutathione" name="ADP"/>
+    <species id="M_Lglut_Pi_glutathione" name="Phosphate"/>
+    <species id="M_Glycine_glutathione" name="Glycine"/>
+    <species id="M_CysGlyH2O_glutathione" name="H2O"/>
+    <species id="M_CysGly_glutathione" name="Cys-Gly"/>
+    <species id="M_CysGlyGlut_glutathione" name="L-glutamate"/>
+    <species id="M_oxoATP_glutathione" name="ATP"/>
+    <species id="M_oxoH20_glutathione" name="2H2O"/>
+    <species id="M_oxoADP_glutathione" name="ADP"/>
+    <species id="M_oxoPhosp_glutathione" name="Phosphate"/>
+    <species id="M_oxoProline_glutathione" name="5-oxo-L-proline"/>
+    <species id="M_L_aminoa_glutathione" name="L-amino-acid"/>
+    <species id="M_glglaa_glutathione" name="5(gamma-L-glutamyl)-L-amino-acid"/>
+    <species id="M_L_aminoacid_glutathione" name="L-amino-acid"/>
+<!-- Glycogen metabolism -->
+    <species id="M_D_Glc6P_glycogen" name="D_Glucose6Phosphate"/>
+    <species id="M_D_Glc_glycogen" name="D_Glucose"/>
+    <species id="M_D_Glc6P_ATP_glycogen" name="ATP"/>
+    <species id="M_D_Glc6P_ADP_glycogen" name="ADP"/>
+    <species id="M_ubiquinone_glycogen" name="Ubiquinone"/>
+    <species id="M_D_Glc_Lact_glycogen" name="D_glucono_1_5_lactone"/>
+    <species id="M_ubiquinol_glycogen" name="Ubiquinol"/>
+    <species id="M_Amyloseglu_glycogen" name="Amylose"/>
+    <species id="M_Maltoseglu_glycogen" name="Maltose"/>
+    <species id="M_Malt_H2O_glycogen" name="H2O"/>
+    <species id="M_Malt_DGlc_glycogen" name="D_Glc"/>
+    <species id="P_Maltotriose_glycogen" name="Maltotriose"/>
+    <species id="P_Maltotetraose_glycogen" name="Maltotetraose"/>
+    <species id="P_Malttt_Glc_glycogen" name="Glc"/>
+    <species id="P_AlphaDGlc1P_glycogen" name="Alpha_D_Glucose_1Phosphate"/>
+    <species id="P_Malttt_Pi_glycogen" name="Pi"/>
+    <species id="M_AlphaDGlc6P_glycogen" name="Alpha_D_Glucose_6Phosphate"/>
+    <species id="M_Dextrin_H2O_glycogen" name="H2O"/>
+    <species id="M_Dextringlu_glycogen" name="Dextrin"/>
+    <species id="M_DexH2O_glycogen" name="H2O"/>
+    <species id="M_BDGlc_glycogen" name="Beta_D_Glucosyl"/>
+    <species id="M_Dext_glycogen" name="Dextrin"/>
+    <species id="M_DextP_glycogen" name="Phosphate"/>
+    <species id="M_Dext_Glc1P_glycogen" name="Alpha_D_Glucose_1_Phosphate"/>
+    <species id="M_Dext_Glyc_glycogen" name="Glycogene"/>
+    <species id="M_14DGlcN_glycogen" name="[alpha_D_glucosyl]n"/>
+    <species id="M_14ADP_Glc_glycogen" name="ADP-alpha-D-glucose"/>
+    <species id="M_14ADP_glycogen" name="ADP"/>
+    <species id="M_14DGlc_N1_glycogen" name="[alpha-D-glucosyl]n+1"/>
+    <species id="M_14DGlc_H2O_glycogen" name="H2O"/>
+    <species id="M_ATP_Glc1P_glycogen" name="ATP"/>
+    <species id="M_ppigluc_glycogen" name="PPi"/>
+    <species id="M_ADP_Glc_glycogen" name="ADP_Glucose"/>
+<!-- Selenocystein biosynthesis -->
+    <species id="M_atpstl_seleno" name="ATP"/>
+    <species id="M_lserstl_seleno" name="L-serine"/>
+    <species id="M_trnastl_seleno" name="tRNASer"/>
+    <species id="M_ampstl_seleno" name="AMP"/>
+    <species id="M_diatestl_seleno" name="diphosphate"/>
+    <species id="M_lststl_seleno" name=" L-seryl-tRNASer"/>
+    <species id="M_atpoptk_seleno" name="ATP"/>
+    <species id="M_adpoptk_seleno" name="ADP"/>
+    <species id="M_oplstoptk_seleno" name="O-phospho-L-seryl-tRNASec"/>
+    <species id="M_sellstst_seleno" name="selenophosphate"/>
+    <species id="M_lstlstst_seleno" name="L-selenocysteinyl-tRNASec"/>
+    <species id="M_pholstst_seleno" name="phosphate"/>
+    <species id="M_h2ostst_seleno" name="H2O"/>
+    <species id="M_h2ooplstlsts_seleno" name="H2O"/>
+    <species id="M_phosoplstlsts_seleno" name="phosphate"/>
+    <species id="M_atpswd_seleno" name="ATP"/>
+    <species id="M_selswd_seleno" name="selenide"/>
+    <species id="M_h2oswd_seleno" name="H2O"/>
+    <species id="M_ampswd_seleno" name="AMP"/>
+    <species id="M_phosswd_seleno" name="phosphate"/>
+    <species id="M_lsell_seleno" name="L-selenocysteine"/>
+    <species id="M_rasell_seleno" name="reduced acceptor"/>
+    <species id="M_lasell_seleno" name="L-alanine"/>
+    <species id="M_accsell_seleno" name="acceptor"/>
+    <species id="M_smlmssm_seleno" name="S-methyl-L-methionine"/>
+    <species id="M_lmetssm_seleno" name="L-methionine"/>
+    <species id="M_smlsssm_seleno" name="Se-methyl-L-selenocysteine "/>
+    <species id="M_hswd_seleno" name="H+"/>
+  </listOfSpecies>
+  <listOfReactions>
+<!-- Element blob -->
+    <reaction id="R_mlcpp" name="Myosin_light_chain_phosphate_phosphohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_mlcp"/>
+        <speciesReference species="P_h2o"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_mlc"/>
+        <speciesReference species="P_phosmlc"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_aphnp" name="ATP:protein-L-histidine_N(pi)-phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_atpaph"/>
+        <speciesReference species="P_thym"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_adpaph"/>
+        <speciesReference species="P_protnph"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_atphts" name="ATP:thymidine_5'-phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_atpphn"/>
+        <speciesReference species="P_proth"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_adpphn"/>
+        <speciesReference species="P_dTMPaph"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_nadhferroxi" name="NADH:ferricytochrome-b5_oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_nadhnafer"/>
+        <speciesReference species="P_ferrnafer"/>
+        <speciesReference species="P_fernaferr"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_nanaferr"/>
+        <speciesReference species="P_feroonadfer"/>
+        <speciesReference species="P_ferronadfer"/>
+        <speciesReference species="P_hplnadhferr"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_tetranadoxi" name="5,6,7,8-tetrahydropteridine:NAD+_oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_tetrahy"/>
+        <speciesReference species="P_nadpltetr"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_dihytetr"/>
+        <speciesReference species="P_nadhtetrana"/>
+        <speciesReference species="P_hpltetrana"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_udpgluepi" name="UDP-N-acetyl-D-glucosamine_4-epimerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_udpacegluc"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_udpacegal"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_ornilase" name="L-ornithine_carboxy-lyase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_ornith"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_putre"/>
+        <speciesReference species="P_co2orni"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_apn" name="adenosine_3',5'-phosphate_5'-nucleotidohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_caa"/>
+        <speciesReference species="P_h20apn"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_aa"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_atpampp" name="ATP:AMP_phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_atpapn"/>
+        <speciesReference species="P_atpampp"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_atpampp"/>
+        <speciesReference species="P_atpampp"/>        
+      </listOfProducts>
+    </reaction>    
+    <reaction id="R_udpg" name="UDPglucose:sterol_3-O-beta-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_udpglu"/>
+        <speciesReference species="P_stero"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_udpudpg"/>
+        <speciesReference species="P_s3bdg"/>        
+      </listOfProducts>
+    </reaction>  
+    <reaction id="R_salmllnm" name="S-Adenosyl-L-methionine:histone-L-lysine N6-methyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_salm"/>
+        <speciesReference species="P_hll"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_salh"/>
+        <speciesReference species="P_hnmll"/>        
+      </listOfProducts>
+    </reaction>   
+    <reaction id="R_pgagg" name="Protein-glutamine:amine_gamma-glutamyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_lge"/>
+        <speciesReference species="P_alkne"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_pnalk"/>
+        <speciesReference species="P_Amnia"/>        
+      </listOfProducts>
+    </reaction>   
+    <reaction id="R_14adgoadg" name="1,4-alpha-D-Glucan:orthophosphate_alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_amyl"/>
+        <speciesReference species="P_phte"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_amyl14adgoadg"/>
+        <speciesReference species="P_dg1p"/>        
+      </listOfProducts>
+    </reaction>      
+    <reaction id="R_ppbtn" name="P1,P4-bis(5'-adenosyl)-tetraphosphate_nucleotidebisphosphohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_ppbtte"/>
+        <speciesReference species="P_h20ppbtn"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_atpppbtn"/>
+        <speciesReference species="P_atpppbtn"/>        
+      </listOfProducts>
+    </reaction>  
+<!-- Degradation des hexoses -->
+    <reaction id="R_dfruph6phase" name="ATP:D-fructose-phosphate_6-phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_atpdfruase_hexose"/>
+        <speciesReference species="M_df1pfruase_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adpdfruase_hexose"/>
+        <speciesReference species="M_F16BP_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_bdglu16pmuase" name="beta-D-Glucose_1,6-phosphomutase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_bdglu1p_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_spontbadglup" name="spontaneous_beta_alpha_d_glucose_phosphate" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adglu1p_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_udpgg1putrase" name="UDP-glucose:alpha-D-galactose-1-phosphate_uridylyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_adglu1p_hexose"/>
+        <speciesReference species="M_udpadgal_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_udpadgluc_hexose"/>
+        <speciesReference species="M_adgal1p_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_udpggluepi" name="UDP-glucose_4-epimerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_udpadgal_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_udpadgluc_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_utpadh1purtr" name="UTP:alpha-D-hexose-1-phosphate_uridylyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_udpadgal_hexose"/>
+        <speciesReference species="M_utpadh1_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adgal1p_hexose"/>
+        <speciesReference species="M_ppiadh1_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_atpgal1ptr" name="ATP:D-galactose_1-phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_adgal1p_hexose"/>
+        <speciesReference species="M_adpgal1ptr_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_dgalgal1ptr_hexose"/>
+        <speciesReference species="M_atpgal1ptr_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_utpadglu1putr" name="UTP:alpha-D-glucose-1-phosphate_uridylyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_udpadgluc_hexose"/>
+        <speciesReference species="M_ppiadglu1_hexose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adglu1p_hexose"/>
+        <speciesReference species="M_utpadglu1_hexose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_phosglumut" name="phosphoglucomutase_(alpha-D-glucose-1,6-bisphosphate-dependent)" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adglu1p_hexose"/>
+      </listOfProducts>
+    </reaction>
+<!-- Glycolyse-->
+    <reaction id="R_G6P" name="ATP:D-hexose_6-phosphotransferase" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_gluhextrase_glycolyse"/>
+        <speciesReference species="M_GluATP_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+        <speciesReference species="M_G6PADP_glycolyse"/>
+        <speciesReference species="M_G6PH_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_F6P" name="D-glucose-6-phosphate_aldose-ketose-isomerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_F6Pglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_F6BP" name="ATP:D-fructose-6-phosphate_1-phosphotransferase" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_F6Pglugen_glycolyse"/>
+        <speciesReference species="M_ATPF6P_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ADPF6P_glycolyse"/>
+        <speciesReference species="M_HF6P_glycolyse"/>
+        <speciesReference species="M_F16BP_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_F6BP_G3P_DHAP" name="D-fructose-1,6-bisphosphate_D-glyceraldehyde-3-phosphate-lyase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_F16BP_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G3Pglugen_glycolyse"/>
+        <speciesReference species="M_DHAPglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_G3P_DHAP" name="D-glyceraldehyde-3-phosphate_aldose-ketose-isomerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_DHAPglugen_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G3Pglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_BPG" name="D-glyceraldehyde-3-phosphate:NAD+_oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_G3Pglugen_glycolyse"/>
+        <speciesReference species="M_G3P_NAD_glycolyse"/>
+        <speciesReference species="M_G3P_Pi_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G3P_NADH_glycolyse"/>
+        <speciesReference species="M_G3P_H_glycolyse"/>
+        <speciesReference species="M_1_3_BPGglu_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_3PG" name="ATP:3-phospho-D-glycerate_1-phosphotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_1_3_BPGglu_glycolyse"/>
+        <speciesReference species="M_BPG_ADP_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_BPG_ATP_glycolyse"/>
+        <speciesReference species="M_3PGglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_2PG" name="3PG:2PG" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_3PGglugen_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_2PGglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_PEP" name="2-phospho-D-glycerate_hydro-lyase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_2PGglugen_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_PEP_H20_glycolyse"/>
+        <speciesReference species="M_PEPglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Pyr" name="ATP:pyruvate 2-O-phosphotransferase" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_PEPglugen_glycolyse"/>
+        <speciesReference species="M_Pyr_ADP_glycolyse"/>
+        <speciesReference species="M_Pyr_H_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Pyr_ATP_glycolyse"/>
+        <speciesReference species="M_Pyrglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction> 
+<!--  Pentose phosphate -->
+    <reaction id="R_G6P_REDUC" name="D-glucose-6-phosphate:NADP+ 1-oxidoreductase" reversible="True">
+      <listOfReactants>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+        <speciesReference species="M_NADPlac_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_6_Glclac_pentose"/>
+        <speciesReference species="M_NADPHlac_pentose"/>
+        <speciesReference species="M_Hlac_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_G_OXI_REDUC" name="D-glucose-6-phosphate:NAD+ 1-oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+        <speciesReference species="M_NADoxred_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_6_Glclac_pentose"/>
+        <speciesReference species="M_NADHoxred_pentose"/>
+        <speciesReference species="M_Hoxred_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_6_P_LactnAnse" name="6-phospho-D-glucono-1,5-lactone lactonohydrolase" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_H2Olachase_pentose"/>
+       <speciesReference species="M_6_Glclac_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_GA6P_pentose"/>
+         <speciesReference species="M_Hlachase_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_6PGluconate" name="6-phospho-D-gluconate:NADP+ 2-oxidoreductase " reversible="true">
+      <listOfReactants>
+         <speciesReference species="M_NADPglate_pentose"/>
+         <speciesReference species="M_GA6P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_NADPHglate_pentose"/>
+         <speciesReference species="M_Hglate_pentose"/>
+         <speciesReference species="M_CO2glate_pentose"/>
+         <speciesReference species="M_ribu_5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+     <reaction id="R_Ribo_Iso" name="D-ribose-5-phosphate aldose-ketose-isomerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_ribofur_5P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ribu_5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Iso_Glyc" name="1sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glycolaldehydetransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_S7P_pentose"/>
+        <speciesReference species="M_GAP_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ribofur_5P_pentose"/>
+        <speciesReference species="M_D_XUL5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Fructo_Hydrolase" name="D-fructose-1,6-bisphosphate 1-phosphohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_H2Ofrate_pentose"/>
+        <speciesReference species="M_D_SEDU1_7P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Pifrate_pentose"/>
+         <speciesReference species="M_S7P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Ribu_epi" name="D-ribulose-5-phosphate 3-epimerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_ribu_5P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_D_XUL5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Phospho_deshy" name="phosphogluconate dehydrogenase[NAD(P)+-dependent, decarboxylating]" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_GA6P_pentose"/>
+         <speciesReference species="M_NADphy_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+         <speciesReference species="M_Hphy_pentose"/>
+         <speciesReference species="M_NADHphy_pentose"/>
+         <speciesReference species="M_CO2phy_pentose"/>
+          <speciesReference species="M_ribu_5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_GTP_Cyclo1" name="phosphogluconate dehydrogenase [NAD(P)+-dependent, decarboxylating]" reversible="true">
+      <listOfReactants>
+         <speciesReference species="M_GA6P_pentose"/>
+         <speciesReference species="M_NADPcyclo_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Hcyclo_pentose"/>
+         <speciesReference species="M_NADPHcyclo_pentose"/>
+         <speciesReference species="M_CO2cyclo_pentose"/>
+          <speciesReference species="M_ribu_5P_pentose"/>   
+    </listOfProducts>
+    </reaction>
+    <reaction id="R_Arabino_lyase" name="D-arabino-hex-3-ulose-6-phosphate formaldehyde-lyase" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_ribu_5P_pentose"/>
+        <speciesReference species="M_CH2O_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_H6P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Phospho_Iso" name="6-phospho-3-hexuloisomerase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_H6P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_F6Pglugen_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Aldolase" name="sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glyceronetransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_E4P_pentose"/>
+         <speciesReference species="M_F6Pglugen_glycolyse"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_GAP_pentose"/>
+        <speciesReference species="M_S7P_pentose"/>
+      </listOfProducts>
+    </reaction> 
+    <reaction id="R_ketolase" name="sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glycolaldehydetransferase" reversible="true">
+      <listOfReactants>
+         <speciesReference species="M_GAP_pentose"/>
+        <speciesReference species="M_S7P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_D_XUL5P_pentose"/>
+        <speciesReference species="M_ribofur_5P_pentose"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_epimerase" name="D-glucose-6-phosphate 1-epimerase" reversible="true">
+      <listOfReactants>
+         <speciesReference species="M_ALPGA_D_G6P_pentose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_G6Phextrase_glycolyse"/>
+      </listOfProducts>
+    </reaction>
+<!-- Oxidative decarboxylation of pyruvate -->
+    <reaction id="R_oxdpy" name="oxidative_decarboxylation_of_pyruvate">
+      <listOfReactants>
+        <speciesReference species="M_Pyrglugen_glycolyse"/>
+        <speciesReference species="M_nadoxdpy_oxipyr"/>
+        <speciesReference species="M_coashoxdpy_oxipyr"/>  
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ACetC_krebs"/>
+        <speciesReference species="M_nadhoxdpy_oxipyr"/>
+        <speciesReference species="M_hploxdpy_oxipyr"/>
+        <speciesReference species="M_co2oxdpy_oxipyr"/>
+      </listOfProducts>
+    </reaction>
+<!-- Anapleurotic synthesis of oxaloacetate -->
+   <reaction id="R_pyrca" name="pyruvate_carboxylase ">
+      <listOfReactants>
+        <speciesReference species="M_atppece_anapleu"/>
+        <speciesReference species="M_Pyrglugen_glycolyse"/>
+        <speciesReference species="M_hc03pece_anapleu"/>  
+        <speciesReference species="M_hfgfce_anapleu"/>  
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adppece_anapleu"/>
+        <speciesReference species="M_phosppece_anapleu"/>
+        <speciesReference species="P_oxaetate_krebs"/>
+      </listOfProducts>
+    </reaction>                
+<!-- Cycle de Krebs -->
+    <reaction id="R_citrate" name="oxoloacetate:citrate" reversible="false">
+      <listOfReactants>
+        <speciesReference species="P_oxaetate_krebs"/>
+        <speciesReference species="M_ACetC_krebs"/>
+        <speciesReference species="M_Oxalo_H20_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Citrate_krebs"/>
+        <speciesReference species="M_CoASH_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_cisA" name="citrate:cis_aconitate" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Citrate_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_CisA_krebs"/>
+        <speciesReference species="M_Cis_H20_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_isocitrate" name="cis_aconitate:isocitrate" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_CisA_krebs"/>
+        <speciesReference species="M_Cis_H20_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Isocitrate_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_oxalosuccinate" name="isocitrate:oxalosuccinate" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Isocitrate_krebs"/>
+        <speciesReference species="M_IsoNAD_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_IsoNADH_krebs"/>
+        <speciesReference species="M_IsoH_krebs"/>
+        <speciesReference species="M_Oxalosuccinate_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_alphaC" name="oxalosuccinate:alpha_cetoglutarate" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_Oxalosuccinate_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_alphaC_krebs"/>
+        <speciesReference species="M_alphaC_CO2_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_SuccCoA" name="alpha_cetoglutarate:succinyl_coa" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_alphaC_krebs"/>
+        <speciesReference species="M_alphaC_NAD_krebs"/>
+        <speciesReference species="M_alphaC_CoA_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Suc_CoA_krebs"/>
+        <speciesReference species="M_Suc_CoA_NADH_krebs"/>
+        <speciesReference species="M_Suc_CoA_H_krebs"/>
+        <speciesReference species="M_Suc_CoA_CO2_krebs"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Succinate" name="succinyl_coa:succinate" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Suc_CoA_krebs"/>
+        <speciesReference species="M_Suc_CoA_GDP_krebs"/>
+        <speciesReference species="M_Suc_CoA_Pi_krebs"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Succinate_krebs"/>
+        <speciesReference species="M_Succinate_SH_krebs"/>
+        <speciesReference species="M_Succinate_GTP_krebs"/>
+      </listOfProducts>
+    </reaction>
+  <reaction id="R_fum" name="succinate:fumarate" reversible="true">
+    <listOfReactants>
+      <speciesReference species="M_Succinate_krebs"/>
+      <speciesReference species="M_CoQ10_krebs"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="M_Fumarate_krebs"/>
+      <speciesReference species="M_CoQ10H2_krebs"/>
+    </listOfProducts>
+  </reaction>
+  <reaction id="R_mal" name="fumarate:malate" reversible="true">
+    <listOfReactants>
+      <speciesReference species="M_Fumarate_krebs"/>
+      <speciesReference species="M_Fum_H20_krebs"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="P_malte_krebs"/>
+    </listOfProducts>
+  </reaction>
+  <reaction id="R_mno" name="(S)-malate:NAD+_oxidoreductase" reversible="true">
+    <listOfReactants>
+      <speciesReference species="P_malte_krebs"/>
+      <speciesReference species="P_nadmno_krebs"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference species="P_oxaetate_krebs"/>
+      <speciesReference species="P_nadhmno_krebs"/>
+      <speciesReference species="P_hmno_krebs"/>
+    </listOfProducts>
+  </reaction>
+<!-- Neoglucogenese -->
+   <reaction id="R_pyrcarneoglu" name="pyruvate carboxylase">
+      <listOfReactants>
+        <speciesReference species="M_Pyrglugen_glycolyse"/>
+        <speciesReference species="M_co2_neoglu"/>
+        <speciesReference species="M_atp_neoglu"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Oxalo_neoglu"/>
+      </listOfProducts>
+    </reaction>         
+       <reaction id="R_pepckneoglu" name="phosphoénolpyruvate carboxykinase">
+      <listOfReactants>
+        <speciesReference species="M_Oxalo_neoglu"/>
+        <speciesReference species="M_gtp_neoglu"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_PEPglugen_glycolyse"/>
+        <speciesReference species="M_coo_neoglu"/>
+      </listOfProducts>
+    </reaction>   
+<!-- Autres voies -->
+<!-- Aspartate et asparagine metabolism -->
+   <reaction id="R_Astyl" name="L-Aspartate:L-Aspartyl-tRNA" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_Aspa_aspartate"/>
+        <speciesReference species="M_Aspt_ATP_aspartate"/>
+				<speciesReference species="M_Aspt_RNA_aspartate"/>
+				<speciesReference species="M_Aspt_ARN_Lig_aspartate"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Aspt_PPi_aspartate"/>
+        <speciesReference species="M_Aspt_AMP_aspartate"/>
+        <speciesReference species="M_Aspt_LAstyl_aspartate"/>
+      </listOfProducts>
+    </reaction>
+		<reaction id="R_Carba" name="L-Aspartate:N-Carbamoyl-L-Aspartate" reversible="false">
+			<listOfReactants>
+				<speciesReference species="M_Aspa_aspartate"/>
+				<speciesReference species="M_Carba_aspartate"/>
+				<speciesReference species="M_Aspt_Carba_aspartate"/>
+			</listOfReactants>
+			<listOfProducts>
+				<speciesReference species="M_Car_Pi_aspartate"/>
+				<speciesReference species="M_Car_Asp_aspartate"/>
+			</listOfProducts>
+		</reaction>
+		<reaction id="R_Ox_ace" name="L-Aspartate:Oxaloacetate" reversible="false">
+			<listOfReactants>
+				<speciesReference species="M_Aspa_aspartate"/>
+				<speciesReference species="M_Oxy_aspartate"/>
+				<speciesReference species="M_Asp_tminase_aspartate"/>
+			</listOfReactants>
+			<listOfProducts>
+				<speciesReference species="M_Gluta_aspartate"/>
+				<speciesReference species="M_Ox_ace_aspartate"/>
+			</listOfProducts>
+		</reaction>
+    <reaction id="R_Astyl" name="L-Aspartate:Adenylosuccinate" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_Aspa_aspartate"/>
+        <speciesReference species="M_Ade_GTP_aspartate"/>
+				<speciesReference species="M_Ade_Imp_aspartate"/>
+				<speciesReference species="M_Ade_synt_aspartate"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Ade_Pi_aspartate"/>
+        <speciesReference species="M_Ade_GDP_aspartate"/>
+        <speciesReference species="M_Adeny_aspartate"/>
+      </listOfProducts>
+    </reaction>
+		<reaction id="R_Aspgine" name="L-Aspartate:L-Asparagine" reversible="false">
+			<listOfReactants>
+				<speciesReference species="M_Aspa_aspartate"/>
+				<speciesReference species="M_Aspg_gluine_aspartate"/>
+				<speciesReference species="M_Aspg_synt_aspartate"/>
+			</listOfReactants>
+			<listOfProducts>
+				<speciesReference species="M_Aspg_gluate_aspartate"/>
+				<speciesReference species="M_Aspg_aspartate"/>
+			</listOfProducts>
+		</reaction>
+		<reaction id="R_Asn" name="L-Asparagine:L-Asparaginyl-tRNA" reversible="false">
+      <listOfReactants>
+        <speciesReference species="M_Aspg_aspartate"/>
+        <speciesReference species="M_Asn_ATP_aspartate"/>
+				<speciesReference species="M_Asn_tRNA_aspartate"/>
+				<speciesReference species="M_Asn_tRNA_ligase_aspartate"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Asn_AMP_aspartate"/>
+        <speciesReference species="M_Asn_PPi_aspartate"/>
+        <speciesReference species="M_Asn_aspartate"/>
+      </listOfProducts>
+    </reaction>
+<!-- Ethanol fermentation -->
+    <reaction id="R_fca" name="format_C-acetyltransferase">
+      <listOfReactants>
+        <speciesReference species="M_accoafca_ethanol"/>
+        <speciesReference species="M_forfca_ethanol"/>
+        <speciesReference species="M_adgse1p_ethanol"/>       
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_coafca_ethanol"/>
+        <speciesReference species="M_purfca_ethanol"/>
+      </listOfProducts>
+    </reaction>                          
+    <reaction id="R_ada" name="acetaldehyde_dehydrogenase_(acetylating)">
+      <listOfReactants>
+        <speciesReference species="M_acetlada_ethanol"/>
+        <speciesReference species="M_coada_ethanol"/>
+        <speciesReference species="M_nadada_ethanol"/>        
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_accoafca_ethanol"/>
+        <speciesReference species="M_nadhada_ethanol"/>
+        <speciesReference species="M_hada_ethanol"/>
+        <speciesReference species="M_adgse1ppp_ethanol"/>
+        </listOfProducts>
+    </reaction>     
+    <reaction id="R_aldase" name="alcohol_dehydrogenase">
+      <listOfReactants>
+        <speciesReference species="M_ethanad_ethanol"/>
+        <speciesReference species="M_naddhad_ethanol"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_acetlada_ethanol"/>
+        <speciesReference species="M_nadhad_ethanol"/>
+        <speciesReference species="M_hhad_ethanol"/>
+      </listOfProducts>
+    </reaction> 
+    <reaction id="R_pdd" name="pyruvate_decarboxylase">
+      <listOfReactants>
+        <speciesReference species="M_a2c_ethanol"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_acetlada_ethanol"/>
+        <speciesReference species="M_co2pdd_ethanol"/>
+      </listOfProducts>
+    </reaction>         
+<!-- Glutathione metabolism -->
+  <reaction id="R_peroxiredoxin" name="peroxiredoxin" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_TrypD_glutathione"/>
+        <speciesReference species="M_TrypD_ROOH_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_TrypD_H2O_glutathione"/>
+        <speciesReference species="M_TrypD_ROH_glutathione"/>
+        <speciesReference species="M_Tryp_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_trypanothione" name="trypanothione_synthase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Tryp_glutathione"/>
+        <speciesReference species="M_Tryp_ATP_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Tryp_ADP_glutathione"/>
+        <speciesReference species="M_Orth_glutathione"/>
+        <speciesReference species="M_GlcSp_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_trypanothione2" name="trypanothione_synthase_bis" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Tryp_ADP_glutathione"/>
+        <speciesReference species="M_Orth_glutathione"/>
+        <speciesReference species="M_GlcSp_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Spermidine_glutathione"/>
+        <speciesReference species="P_glutnadpox_glutathione"/>
+        <speciesReference species="M_Spermidine_ATP_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_glutathione" name="glutathione:NADP+_oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_glutnadpox_glutathione"/>
+        <speciesReference species="P_glutglunadpox_glutathione"/>
+        <speciesReference species="P_nadpplnadpox_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_hplnadpox_glutathione"/>
+        <speciesReference species="P_nadphnadpox_glutathione"/>
+        <speciesReference species="P_glutdisul_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_glutathione" name="RX:glutathione" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_glutnadpox_glutathione"/>
+        <speciesReference species="M_RX_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_HX_glutathione"/>
+        <speciesReference species="M_RS_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_glutathioneSynth" name="gamma-L-glutamyl-L-cysteine:glycine_ligase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_glutnadpox_glutathione"/>
+        <speciesReference species="M_glutathioneADP_glutathione"/>
+        <speciesReference species="M_glutathionePi_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_glutathioneATP_glutathione"/>
+        <speciesReference species="M_gammaLGLC_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_bisgamma" name="gamma-glutamylcysteine:NADP+-oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_gammaLGLC_glutathione"/>
+        <speciesReference species="M_gammaNADP_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_gammaNADPH_glutathione"/>
+        <speciesReference species="M_gammaH_glutathione"/>
+        <speciesReference species="M_Bgamma_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_glutcyt" name="L-glutamate:L-cysteine-gamma-ligase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_gammaLGLC_glutathione"/>
+        <speciesReference species="M_Lglut_ADP_glutathione"/>
+        <speciesReference species="M_Lglut_Pi_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Lglut_ATP_glutathione"/>
+        <speciesReference species="M_Lglut_glutathione"/>
+        <speciesReference species="M_Lcys_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="cysgly" name="Cys-Gly_H2O:L-Cysteine_Glycine" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Lcys_glutathione"/>
+        <speciesReference species="M_Glycine_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_CysGlyH2O_glutathione"/>
+        <speciesReference species="M_CysGly_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="ggh" name="gamma-glutamyl-hydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_CysGly_glutathione"/>
+        <speciesReference species="M_CysGlyGlut_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_GluT_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="oxopah" name="5-oxo-L-proline-amidohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Lglut_glutathione"/>
+        <speciesReference species="M_oxoPhosp_glutathione"/>
+        <speciesReference species="M_oxoADP_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_oxoProline_glutathione"/>
+        <speciesReference species="M_oxoATP_glutathione"/>
+        <speciesReference species="M_oxoH20_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="gggt" name="(gamma-L-glutamyl)-L-amino-acid:gamma-glutamyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_oxoProline_glutathione"/>
+        <speciesReference species="M_L_aminoa_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_glglaa_glutathione"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="gggt" name="glutathione:L-amino-acid-5-glutamyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_CysGly_glutathione"/>
+        <speciesReference species="M_glglaa_glutathione"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_GluT_glutathione"/>
+        <speciesReference species="M_L_aminoacid_glutathione"/>
+      </listOfProducts>
+    </reaction>
+<!-- Glycogen metabolism -->
+    <reaction id="R_glc6mut" name="phosphoglucomutase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_D_Glc6P_glycogen"/>
+        <speciesReference species="M_D_Glc6P_ADP_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_D_Glc_glycogen"/>
+        <speciesReference species="M_D_Glc6P_ATP_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_ubiqoxase" name="D-glucose:ubiquinone_oxidoreductase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_D_Glc_glycogen"/>
+        <speciesReference species="M_ubiquinone_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_D_Glc_Lact_glycogen"/>
+        <speciesReference species="M_ubiquinol_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_malt" name="4-alpha-glucanotransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_D_Glc_glycogen"/>
+        <speciesReference species="M_Amyloseglu_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Maltoseglu_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_malt_Glc" name="alpha-D-glucoside glucohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Maltoseglu_glycogen"/>
+        <speciesReference species="M_Malt_H2O_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Malt_DGlc_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_maltotriose" name="alpha-D-glucoside glucohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Maltoseglu_glycogen"/>
+        <speciesReference species="M_Malt_DGlc_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_Maltotriose_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_maltotetraose" name="alpha-D-glucan:phosphate-alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_Maltotriose_glycogen"/>
+        <speciesReference species="P_Malttt_Glc_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_Maltotetraose_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_hydroGlc" name="alpha-D-glucan:phosphate-alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_AlphaDGlc1P_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_Malttt_Glc_glycogen"/>
+        <speciesReference species="P_Malttt_Pi_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_dglc" name="alpha-D-glucose:1,6-phosphomutase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_AlphaDGlc6P_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="P_AlphaDGlc1P_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_dextrin" name="amylo-alpha-1,6-glucosidase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="P_Maltotetraose_glycogen"/>
+        <speciesReference species="M_Dextrin_H2O_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Dextringlu_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_betaDGlc" name="4-alpha-D-glucan glucohydrolase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Dextringlu_glycogen"/>
+        <speciesReference species="M_DexH2O_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_BDGlc_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_dexGlc1P" name="alpha-D-glucan:phosphate alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Dext_glycogen"/>
+        <speciesReference species="M_DextP_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Dext_Glc1P_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_GlycogeneGlc1P" name="alpha-D-glucan:phosphate-alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Dext_Glyc_glycogen"/>
+        <speciesReference species="M_DextP_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_Dext_Glc1P_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_Glc1P_14DGlc" name="alpha-D-glucan:alpha-D-glucan-6-alpha-D-[alpha-D-glucano]-transferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_Dext_Glc1P_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_14DGlc_N1_glycogen"/>
+        <speciesReference species="M_14DGlc_H2O_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_amylose" name="ADP-glucose:(alpha-D-glucan-4-alpha-D-glucosyltransferase" reversible="true">
+      <listOfReactants>
+        <speciesReference species="M_14DGlc_N1_glycogen"/>
+        <speciesReference species="M_14ADP_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_14DGlcN_glycogen"/>
+        <speciesReference species="M_14ADP_Glc_glycogen"/>
+      </listOfProducts>
+    </reaction>
+    <reaction id="R_G1PAT" name="glucose_1_phosphate_adenylyltransferase" reversible="true">
+      <listOfReactants>
+        //<speciesReference species="M_14ADP_Glc_glycogen"/>
+        <speciesReference species="M_ATP_Glc1P_glycogen"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ppigluc_glycogen"/>
+        <speciesReference species="M_ADP_Glc_glycogen"/>
+      </listOfProducts>
+    </reaction>
+<!-- Selenocystein biosynthesis -->
+    <reaction id="R_stl" name="serine-tRNA_ligase">
+      <listOfReactants>
+        <speciesReference species="M_atpstl_seleno"/>
+        <speciesReference species="M_lserstl_seleno"/>
+        <speciesReference species="M_trnastl_seleno"/>  
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ampstl_seleno"/>
+        <speciesReference species="M_diatestl_seleno"/>
+        <speciesReference species="M_lststl_seleno"/>
+      </listOfProducts>
+    </reaction> 
+    <reaction id="R_optk" name="O-phosphoseryl-tRNASec_kinase ">
+      <listOfReactants>
+        <speciesReference species="M_atpoptk_seleno"/>
+        <speciesReference species="M_lststl_seleno"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_adpoptk_seleno"/>
+        <speciesReference species="M_oplstoptk_seleno"/>
+      </listOfProducts>
+    </reaction>     
+    <reaction id="R_lstst" name="L-seryl-tRNASec_selenium_transferase">
+      <listOfReactants>
+        <speciesReference species="M_lststl_seleno"/>
+        <speciesReference species="M_lstlstst_seleno"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_sellstst_seleno"/>
+        <speciesReference species="M_h2ostst_seleno"/>
+        <speciesReference species="M_pholstst_seleno"/>
+      </listOfProducts>
+    </reaction>      
+    <reaction id="R_oplstlsts" name="O-phospho-L-seryl-tRNASec:L-selenocysteinyl-tRNA_synthase ">
+      <listOfReactants>
+        <speciesReference species="M_oplstoptk_seleno"/>
+        <speciesReference species="M_sellstst_seleno"/>
+        <speciesReference species="M_h2ooplstlsts_seleno"/>  
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_lstlstst_seleno"/>
+        <speciesReference species="M_phosoplstlsts_seleno"/>
+        <speciesReference species="M_phosoplstlsts_seleno"/>
+      </listOfProducts>
+    </reaction>   
+    <reaction id="R_swd" name="selenide_water_dikinase">
+      <listOfReactants>
+        <speciesReference species="M_atpswd_seleno"/>
+        <speciesReference species="M_sellstst_seleno"/>
+        <speciesReference species="M_h2oswd_seleno"/>  
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_ampswd_seleno"/>
+        <speciesReference species="M_selswd_seleno"/>
+        <speciesReference species="M_phosswd_seleno"/>
+        <speciesReference species="M_hswd_seleno"/>   
+      </listOfProducts>
+    </reaction>   
+    <reaction id="R_sell" name="selenocysteine_lyase ">
+      <listOfReactants>
+        <speciesReference species="M_selswd_seleno"/>
+        <speciesReference species="M_lasell_seleno"/>
+        <speciesReference species="M_accsell_seleno"/>      
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_lsell_seleno"/>
+        <speciesReference species="M_rasell_seleno"/>
+      </listOfProducts>
+    </reaction>   
+    <reaction id="R_ssm" name="selenocysteine_Se-methyltransferase ">
+      <listOfReactants>
+        <speciesReference species="M_smlmssm_seleno"/>
+        <speciesReference species="M_lsell_seleno"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="M_lmetssm_seleno"/>
+        <speciesReference species="M_smlsssm_seleno"/>
+      </listOfProducts>
+    </reaction>   
+  </listOfReactions>
+</model>
+</sbml>

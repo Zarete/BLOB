@@ -1,0 +1,21 @@
+#
+#  dock_3hfl_short.mac - local docking to test recognition of bound subunits
+#
+
+close_all
+
+docking_fft_device  1
+docking_fft_type    1
+docking_main_scan   0
+docking_main_search 25
+
+receptor_range_angle       30
+ligand_range_angle         30
+
+docking_r12_step        0.5
+docking_refine            5
+
+RUN_MACRO 3hfl.mac
+
+ACTIVATE_DOCKING
+

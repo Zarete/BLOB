@@ -1,0 +1,3 @@
+[["match_part"],"annotation","match_part","Scaffold11065",299,356]
+[["match_part"],"annotation","match_part","Scaffold11065",613,736]
+[["match_part"],"annotation","match_part","Scaffold11065",1063,1139]
