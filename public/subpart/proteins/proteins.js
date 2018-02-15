@@ -159,7 +159,7 @@ function dock(){
           if (nomprojet != null){
             $.ajax({
                     type: 'POST',
-                    url: 'http://localhost:8080/subpart/proteins/',
+                    url: 'http://5.51.0.103:80/subpart/proteins/',
         	    datatype: 'text',
         	    data: {
         		'prot1': prot1pdb,
@@ -268,7 +268,7 @@ document.getElementById("dockDownload").addEventListener("click", function(){
   var projet = prompt('Enter the project name you are looking for :', 'project');
   if (projet != null){
     $.ajax({
-        url:'http://localhost:8080/subpart/proteins/PDB/' + projet + '/macro.mac',
+        url:'http://5.51.0.103:80/subpart/proteins/PDB/' + projet + '/macro.mac',
         type:'GET',
         error: function(jqXHR, textStatus, errorThrown)
         {
@@ -277,7 +277,7 @@ document.getElementById("dockDownload").addEventListener("click", function(){
         success: function()
         {
           $.ajax({
-              url:'http://localhost:8080/subpart/proteins/PDB/' + projet + '/resultDocking.pdb',
+              url:'http://5.51.0.103:80/subpart/proteins/PDB/' + projet + '/resultDocking.pdb',
               type:'GET',
               error: function(jqXHR, textStatus, errorThrown)
               {
@@ -286,7 +286,7 @@ document.getElementById("dockDownload").addEventListener("click", function(){
               success: function()
               {
                 let formDownload = document.getElementById("formDownload");
-                formDownload.action = 'http://localhost:8080/subpart/proteins/PDB/' + projet + '/resultDocking.pdb';
+                formDownload.action = 'http://5.51.0.103:80/subpart/proteins/PDB/' + projet + '/resultDocking.pdb';
                 var evt = document.createEvent("MouseEvents");
                 evt.initEvent("click", true, false);
                 let buttonDownload = document.getElementById("hiddenDownload");
